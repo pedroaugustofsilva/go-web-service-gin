@@ -21,3 +21,17 @@ curl http://localhost:3000/albums \
 ```sh
 curl http://localhost:3000/albums/2
 ```
+
+## Rodar o container do Postgres
+
+```sh
+docker run --name postgres -e POSTGRES_PASSWORD=postgres -d postgres
+```
+
+```sh
+docker cp ./albums.sql postgres:/
+```
+
+```sh
+docker exec postgres psql -h localhost -p 5432 -U postgres -f /albums.sql
+```

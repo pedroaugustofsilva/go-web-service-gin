@@ -12,3 +12,4 @@ COPY *.go ./
 RUN go build -o /web-service
 
 CMD ["/web-service"]
+
